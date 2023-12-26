@@ -1,0 +1,22 @@
+﻿@using deneme.Entity;
+@model IEnumerable<urun>
+@{
+    ViewBag.Title = "Urunlistesi";
+}
+
+<div class="container pb-5">
+    <div class="container  mb-5" id="urunler">
+        <div class="row">
+            <div class="col-md-3">
+                @Html.Action("GetCategories","Home")
+            </div>
+
+            <div class="col-md-9">
+
+                @Html.Partial("_urunliste", Model)
+
+            </div>
+        </div>
+    </div>
+
+</div>

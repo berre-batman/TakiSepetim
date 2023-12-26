@@ -1,0 +1,27 @@
+﻿@using deneme.Entity;
+@model IEnumerable<urun>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="p-5 mb-4 bg-body-tertiary rounded-3" id="jumbotron">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Takı Sepetim</h1>
+        <p class="col-md-8 fs-4"></p>
+        <button class="btn btn-primary btn-lg" type="button">Takıları Keşfet</button>
+    </div>
+</div>
+
+<div class="container pb-5">
+   
+    @Html.Partial("_urunliste",Model)
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+﻿@using deneme.Entity;
+@model urun
+@{
+    ViewBag.Title = "Urundetay";
+}
+<style>
+    .badge {
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: bold;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+        background-color: #28a745;
+    }
+</style>
+
+<div class="container pb-5">
+
+    
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-6">
+            <img src="~/upload/@Model.Image" class="img-fluid rounded w-100" style="width:300px;height:400px;">
+        </div>
+        <div class="col-md-6">
+            <h1>@Model.Name</h1>
+            <div class="row mt-1">
+                <div class="col-md-12">
+                    @if (Model.Onay)
+                    {
+                        <span class="badge badge-primary">Stokta</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-danger">Stokta Yok</span>
+                    }
+
+                    <span class="product-number">#919</span>
+                </div>
+
+            </div>
+            <div class="row mt-1">
+                <div class="col-md-12">
+                    <div id="description">
+                        @Model.Description
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-md-4">
+                    <i class="fa-solid fa-star" style="color: #1d2b44;"></i>
+                    <i class="fa-solid fa-star" style="color: #1d2b44;"></i>
+                    <i class="fa-solid fa-star" style="color: #1d2b44;"></i>
+                    <i class="fa-solid fa-star" style="color: #1d2b44;"></i>
+                    <i class="fa-regular fa-star" style="color: #1d2b44;"></i>
+                    <span class="badge badge-success">34</span>
+
+                </div>
+                <div id="write-review" class="col-md-4">
+                    <a href="#"> write a new </a>
+                </div>
+                <div class="col-md-12">
+                    <h4 id="product-price">@Model.Fiyat TL</h4>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-12">
+
+                        @using (Html.BeginForm("AddToCart","Cart"))
+                        {
+                            @Html.HiddenFor(i=>i.Id)
+                                <button type="submit" class="btn btn-primary">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                    Sepete Ekle
+                                </button>
+                         }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="bd-example">
+                <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane" type="button" role="tab" aria-controls="description-tab-pane" aria-selected="true">Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment-tab-pane" type="button" role="tab" aria-controls="payment-tab-pane" aria-selected="false" tabindex="-1">Payment Methods</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="comment-tab" data-bs-toggle="tab" data-bs-target="#comment-tab-pane" type="button" role="tab" aria-controls="comment-tab-pane" aria-selected="false" tabindex="-1">Comment</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled="" tabindex="-1">Disabled</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab" tabindex="0">
+                        <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                    </div>
+                    <div class="tab-pane fade" id="payment-tab-pane" role="tabpanel" aria-labelledby="payment-tab" tabindex="0">
+                        <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                    </div>
+                    <div class="tab-pane fade" id="comment-tab-pane" role="tabpanel" aria-labelledby="comment-tab" tabindex="0">
+                        <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                    </div>
+                    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+                        <p>This is some placeholder content the <strong>Disabled tab's</strong> associated content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

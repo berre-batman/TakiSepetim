@@ -1,0 +1,40 @@
+﻿
+@*<form class="d-flex" role="search" onsubmit="window.location.href='kayit.html'; return false;">
+    <button class="btn btn-outline-light" type="submit">Üye Ol</button>
+</form>*@
+
+
+<ul class="navbar-nav my-2 my-lg-0">
+
+    @if (Request.IsAuthenticated)
+    {
+        //kullanıcı adını ve logout linklerini çıkar
+
+        <li class="nav-item">
+            <a class="nav-link" href="/">@User.Identity.Name</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="~/Account/Logout">Çıkış Yap</a>
+        </li>
+    }
+    else
+    {
+        //login ve register linklerini çıkar
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="~/Account/Login">Giriş Yap</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="~/Account/Register">Kaydol</a>
+        </li>
+    }
+
+
+
+
+
+
+</ul>

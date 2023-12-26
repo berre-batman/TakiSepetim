@@ -1,0 +1,45 @@
+﻿@model deneme.Entity.Kategori
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="container pb-5">
+
+    <h2 style="margin-top:50px;margin-bottom:30px;">Kategori Sil</h2>
+    <hr />
+
+    <h3>Silmek istediğine emin misin?</h3>
+    <hr />
+    <div>
+
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" style="margin-bottom:90px;margin-top:35px;">
+                <input type="submit" value="Sil" class="btn btn-danger" /> 
+                @Html.ActionLink("Listeye Dön", "Index", null, new { @class = "btn btn-warning" })
+            </div>
+        }
+    </div>
+</div>

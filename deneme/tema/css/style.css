@@ -1,0 +1,47 @@
+#jumbotron
+{
+    background-image: url("../img/jumbotron.jpeg");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    height: 70vh; /* Ekran yüksekliğine göre ayarlanabilir */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.card-title{
+    font-size:23px;
+    font-weight:400;
+    color: #484848;
+    line-height:1.35em;
+    height:34px;
+}
+
+.description {
+    font-size: 17px;
+    height:40px;
+}
+
+.product-price{
+    color: #414141;
+    font-weight:700;
+    font-size:15px;
+}
+
+.admin-body {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    height: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#urunler{
+    margin-top: 50px;
+}
